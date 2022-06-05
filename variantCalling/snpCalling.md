@@ -96,19 +96,19 @@ SV type
 
 # haplotypeCaller
 
-    1. two step GVCF file (same format as vcf but has every genomic information)
+1. two step GVCF file (same format as vcf but has every genomic information)
     
     create GVCF per sample.  It have all the position in gemone (Why? multiple samples,).
     
-    2.VQSQ tells us waht is good variants
+2. VQSQ tells us waht is good variants
 
-    3. what is genotype refinement?
+3. what is genotype refinement?
 
     * process: recalibrated variants -> variant postier qualityes -> variant filtering -> variant annotater
 
-    4. evaluate the callse of downstream?
+4. evaluate the callse of downstream?
 
-    5. fitering 
+5. fitering 
     
     * mutiple samples help a lot,()
 
@@ -160,7 +160,55 @@ SV type
 
     Pnael of normals for CNVs
 
+# intro to pipeline (automate processing)
+
+1. WDL
+
+2. Use containers forprotablility and reproducbility
+
+# Intro to a case study analysis ? Todo
+
+1. data input
+    
+    data + resources
+
+2. processing
+
+# hapotypercaller -> per sample -> gvcf
+
+hard clip and soft clip
+
+1. algorithm
+
+    1. identiy activeregions -> looking for --> mismatch or indels
+
+        * sliding windows along the refrence
+        * count mismatheds, indels, and soft-clips
+        * mesuare of entropy
+
+
+    2. Assemble plausible haplotypes
+
+        * local realignment via graph assembly (recove indels and remove artifacts)
+        * variant phasing
+
+    3. PairHMM used base qualities tosocre alignments
+
+
+# JointCalling?
+
+# VQSQ
+1. appraoches
+    1. Hard filtering binary threshold
+
+    2. Variant recalibration with Gaussian Mixture Models
+
+    3. Variant recalibration with convolutional neural networks
+
+2. Filtering always entails specificity and sensitivity
+
+3. 
 
 
 
-
+    
